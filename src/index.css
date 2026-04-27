@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Moroccan-inspired design system. All colors HSL. */
+
+@layer base {
+  :root {
+    /* Moroccan palette: warm sand, deep terracotta, majorelle blue, mint, gold */
+    --background: 38 45% 95%;
+    --foreground: 15 35% 18%;
+
+    --card: 38 50% 97%;
+    --card-foreground: 15 35% 18%;
+
+    --popover: 38 50% 97%;
+    --popover-foreground: 15 35% 18%;
+
+    /* Terracotta primary */
+    --primary: 12 65% 48%;
+    --primary-foreground: 38 50% 97%;
+    --primary-glow: 18 80% 60%;
+
+    /* Majorelle blue secondary */
+    --secondary: 220 70% 35%;
+    --secondary-foreground: 38 50% 97%;
+
+    --muted: 38 30% 88%;
+    --muted-foreground: 15 20% 40%;
+
+    /* Moroccan gold accent */
+    --accent: 42 78% 52%;
+    --accent-foreground: 15 35% 18%;
+
+    /* Mint */
+    --mint: 165 45% 45%;
+    --mint-foreground: 38 50% 97%;
+
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 38 50% 97%;
+
+    --border: 15 30% 80%;
+    --input: 38 40% 90%;
+    --ring: 12 65% 48%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-sunset: linear-gradient(135deg, hsl(12 65% 48%), hsl(42 78% 52%));
+    --gradient-tile: linear-gradient(135deg, hsl(220 70% 35%), hsl(12 65% 48%));
+    --gradient-bg: linear-gradient(180deg, hsl(38 45% 95%), hsl(38 55% 90%));
+
+    /* Shadows */
+    --shadow-card: 0 10px 30px -10px hsl(12 65% 48% / 0.3);
+    --shadow-glow: 0 0 40px hsl(42 78% 52% / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 15 35% 10%;
+    --foreground: 38 45% 95%;
+    --card: 15 30% 14%;
+    --card-foreground: 38 45% 95%;
+    --popover: 15 30% 14%;
+    --popover-foreground: 38 45% 95%;
+    --primary: 18 80% 60%;
+    --primary-foreground: 15 35% 10%;
+    --secondary: 220 60% 50%;
+    --secondary-foreground: 38 45% 95%;
+    --muted: 15 25% 20%;
+    --muted-foreground: 38 30% 70%;
+    --accent: 42 78% 52%;
+    --accent-foreground: 15 35% 10%;
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 38 45% 95%;
+    --border: 15 25% 25%;
+    --input: 15 25% 22%;
+    --ring: 18 80% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    direction: rtl;
+  }
+
+  body {
+    @apply bg-background text-foreground font-arabic;
+    background-image: var(--gradient-bg),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='none' stroke='%23c2410c' stroke-width='1' opacity='0.08'><path d='M40 0 L80 40 L40 80 L0 40 Z'/><circle cx='40' cy='40' r='15'/><path d='M40 25 L55 40 L40 55 L25 40 Z'/></g></svg>");
+    background-blend-mode: multiply;
+  }
+}
+
+@layer utilities {
+  .font-arabic {
+    font-family: 'Tajawal', 'Cairo', system-ui, sans-serif;
+  }
+  .font-display {
+    font-family: 'Reem Kufi', 'Cairo', serif;
+  }
+  .text-shadow-soft {
+    text-shadow: 0 2px 8px hsl(15 35% 18% / 0.15);
+  }
+  .moroccan-pattern {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><g fill='none' stroke='%23ffffff' stroke-width='1.2' opacity='0.25'><path d='M30 0 L60 30 L30 60 L0 30 Z'/><circle cx='30' cy='30' r='10'/></g></svg>");
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
